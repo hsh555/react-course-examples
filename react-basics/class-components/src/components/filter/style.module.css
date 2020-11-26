@@ -1,0 +1,11 @@
+.filterInput {
+    background-color: white;
+    box-shadow: 1px 1px 6px #bfbfbf;
+    padding: 10px;
+    margin: 16px 0;
+    min-width: 300px;
+    max-width: 100%;
+    height: 15px;
+    border-radius: 8px;
+    border: 2px solid #4caf50;
+  }
