@@ -26,7 +26,7 @@ class Filter extends React.Component {
 
     render() {
         return (
-            <input type="text" className={styles.filterInput}
+            <input type="text" className={styles.filterInput} required='requierd'
                 placeholder="filter contacts..." onChange={this.handleOnChange} />
         );
     }
