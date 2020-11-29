@@ -23,9 +23,9 @@ class AddContactItemModal extends React.Component {
     handleOnSubmit = (e) => {
         e.preventDefault();
         let contactData = {
-            name: e.target.childNodes[0].value,
-            familyName: e.target.childNodes[1].value,
-            phoneNumber: e.target.childNodes[2].value,
+            name: e.target.name.value,
+            familyName: e.target.familyName.value,
+            phoneNumber: e.target.phoneNumber.value
         }
         this.props.sendContactDataToParent(contactData);
         this.setState({

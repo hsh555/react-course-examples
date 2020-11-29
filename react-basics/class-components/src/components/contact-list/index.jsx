@@ -82,6 +82,8 @@ class ContactList extends React.Component {
     }
 
     sendContactDataToServer = (contactData) => {
+        const contactId = this.state.apiData.length;
+        contactData.ID = contactId;
         this.setState((prevState) => {
             return {
                 apiData: [...prevState.apiData, contactData],
