@@ -1,0 +1,87 @@
+.modal-add-contact-item {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .2);
+}
+
+.modal-add-contact-item .modal-inner {
+    width: 30%;
+    margin: 20vh auto 0;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #4caf50;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-add-contact-item .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 13px;
+    color: #4caf50;
+    cursor: pointer;
+}
+
+.modal-add-contact-item .modal-content {
+    width: 100%;
+}
+
+.modal-add-contact-item .form-title {
+    text-align: center;
+    color: #555;
+}
+
+.modal-add-contact-item form {
+    width: 100%;
+    margin: 20px auto 0;
+}
+
+.modal-add-contact-item input {
+    width: 100%;
+    margin: 7px auto;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.modal-add-contact-item button {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: 0;
+    background: #4caf50;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 7px;
+    box-shadow: 0 0 5px #ccc;
+    cursor: pointer;
+}
+
+.modal-add-contact-item button:active {
+    box-shadow: none;
+}
+
+.add-new-contact-icon {
+    position: fixed;
+}
+
+.add-new-contact-icon {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    padding: 20px 23px;
+    background: #4caf50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fa.fa-plus {
+    color: #fff;
+    font-size: 28px;
+    padding-top: 2px;
+}

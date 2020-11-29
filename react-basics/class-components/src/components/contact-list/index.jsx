@@ -1,6 +1,8 @@
 import React from "react";
 import ContactItem from "../contact-item";
 import Filter from "../filter";
+import AddContactItemModal from "../add-contact-item-modal";
+
 import styles from "./style.module.scss";
 
 const mockApiData = [
@@ -51,20 +53,23 @@ class ContactList extends React.Component {
         super(props);
         this.state = {
             contactsList: [],
+            apiData: []
         };
     }
     componentDidMount() {
         // TODO:  start api fetch here
+        console.log(1)
         fetchFromMockApiEndPoint().then((mockApiData) => {
             this.setState({
-                contactsList: [...mockApiData]
-            }, () => this.contactsList = this.state.contactsList)
-        })
+                contactsList: [...mockApiData],
+                apiData: [...mockApiData]
+            })
+        }).catch();
     }
 
     handleFilter = (value) => {
         const reg = RegExp(value);
-        const list = this.contactsList.filter((item) =>
+        const list = this.state.apiData.filter((item) =>
             (reg.test(item.name.toLowerCase()) === true) ||
             (reg.test(item.phoneNumber) === true)
         );
@@ -76,12 +81,22 @@ class ContactList extends React.Component {
         });
     }
 
+    sendContactDataToServer = (contactData) => {
+        this.setState((prevState) => {
+            return {
+                apiData: [...prevState.apiData, contactData],
+                contactsList: [...prevState.contactsList, contactData]
+            }
+        })
+    }
+
     render() {
         const { contactsList } = this.state;
         return (
             <div className={styles.listWrapper}>
                 <Filter passDataToParent={this.handleFilter} />
-                {contactsList.map((item, index) => <ContactItem key={index} contactData={item} />)}
+                {contactsList.map((item) => <ContactItem key={item.ID} contactData={item} />)}
+                <AddContactItemModal sendContactDataToParent={this.sendContactDataToServer} />
             </div>
         );
     }
