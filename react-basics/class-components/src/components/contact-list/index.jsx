@@ -58,7 +58,6 @@ class ContactList extends React.Component {
     }
     componentDidMount() {
         // TODO:  start api fetch here
-        console.log(1)
         fetchFromMockApiEndPoint().then((mockApiData) => {
             this.setState({
                 contactsList: [...mockApiData],
